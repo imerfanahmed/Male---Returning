@@ -1,5 +1,5 @@
 window.addEventListener("DOMContentLoaded", function () {
-  
+
     // Get the form elements
     var form = document.getElementById("form");
 
@@ -39,7 +39,7 @@ window.addEventListener("DOMContentLoaded", function () {
         var jointPain = document.getElementById("jointPain").checked;
         var depressionAnxiety = document.getElementById("depressionAnxiety").checked;
         var farigue = document.getElementById("fatigue").checked;
-        var other = document.getElementById("other").checked; 
+        var other = document.getElementById("other").checked;
 
         if(updatePSA === "No")
         {
@@ -54,7 +54,11 @@ window.addEventListener("DOMContentLoaded", function () {
         if(flag!=1 && symptompRelief==="Yes" && (sleepIssues || nightSweats || moodiness || lowLibido || brainFrog || jointPain || depressionAnxiety || farigue || other))
         {
             flag = 1;
-            document.getElementById("newTestosteroneDose").textContent= lastTestosteroneDose + "mg Pellets";
+            document.getElementById("newTestosteroneDose").innerHTML =
+            "<br>"+
+            "Conservative: " + newTestosteroneDose * 0.50 +"mg pellets<br>"
+            + " Median: " + newTestosteroneDose * 0.75 + "mg pellets<br>"
+            + " Aggresive: " + newTestosteroneDose + " mg pellets";
 
         }
 
@@ -62,7 +66,11 @@ window.addEventListener("DOMContentLoaded", function () {
         {
             flag = 1;
             var newTestosteroneDose = lastTestosteroneDose + 200;
-            document.getElementById("newTestosteroneDose").textContent= newTestosteroneDose + "mg Pellets";
+            document.getElementById("newTestosteroneDose").innerHTML =
+            "<br>"+
+            "Conservative: " + newTestosteroneDose * 0.50 +"mg pellets<br>"
+            + " Median: " + newTestosteroneDose * 0.75 + "mg pellets<br>"
+            + " Aggresive: " + newTestosteroneDose + " mg pellets";
 
 
             let p = document.createElement("p");
@@ -79,7 +87,11 @@ window.addEventListener("DOMContentLoaded", function () {
             {
                 newTestosteroneDose = 0;
             }
-            document.getElementById("newTestosteroneDose").textContent= newTestosteroneDose + "mg Pellets";
+            document.getElementById("newTestosteroneDose").innerHTML =
+            "<br>"+
+            "Conservative: " + newTestosteroneDose * 0.50 +"mg pellets<br>"
+            + " Median: " + newTestosteroneDose * 0.75 + "mg pellets<br>"
+            + " Aggresive: " + newTestosteroneDose + " mg pellets";
 
 
             let p = document.createElement("p");
@@ -92,7 +104,7 @@ window.addEventListener("DOMContentLoaded", function () {
 
     // Get the modal
     var modal = document.getElementById("myModal");
-    
+
     // Get the button that opens the modal
     var btn = document.getElementById("calculate");
 
@@ -106,7 +118,7 @@ window.addEventListener("DOMContentLoaded", function () {
         modal.style.display = "block";
         }
     };
-    
+
     // When the user clicks on <span> (x), close the modal
     span.onclick = function () {
         modal.style.display = "none";
@@ -118,5 +130,5 @@ window.addEventListener("DOMContentLoaded", function () {
         modal.style.display = "none";
         }
     };
-        
+
 });

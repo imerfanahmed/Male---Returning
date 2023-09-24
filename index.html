@@ -6,37 +6,50 @@
   <script src="script.js"></script>
 </head>
 <body>
-  
+
   <!-- The Modal -->
   <div id="myModal" class="modal">
     <!-- Modal content -->
     <div class="modal-content">
       <span class="close">×</span>
+      <h2 class="text-center">Suggested Dosage</h2>
+      <hr>
 
       <div id="testosteroneDoseBlock" style="background-color: #fff;">
         <h5>New Testosterone Dose: <span id="newTestosteroneDose"></span></h5>
         <h6>Last Testosterone Dose: <span id="lastTestosteroneDoseLabel"></span></h6>
       </div>
-      
+
       <div class="appendmsg" id="appendcontent"></div>
       <div id="dialogueContainer"></div>
-      
+
+      <small class="text-center">
+        <div>Anastrozole Dosage: </div>
+        <p class="text-bold">
+          <1000: 10mg,<br>
+            1000-1500: 20mg ,<br>
+            1500-2000: 30mg,<br>
+            >2000: 40mg
+        </p>
+
+      </small>
+
     </div>
   </div>
 
-  
-  
 
- 
+
+
+
   <form id="form">
     <fieldset>
       <legend>Patient Information</legend>
-      <label for="patientID">Patient ID:</label>
-      <input type="text" id="patientID" name="patientID" required><br><br>
-    
+      <!-- <label for="patientID">Patient ID:</label>
+      <input type="text" id="patientID" name="patientID" required><br><br> -->
+
       <label for="patientAge">Patient Age:</label>
       <input type="number" id="patientAge" name="patientAge"><br><br>
-    
+
       <label for="patientWeight">Patient Weight (lbs):</label>
       <input type="number" id="patientWeight" name="patientWeight"><br><br>
 
@@ -46,7 +59,7 @@
       <legend>Last Procedure Information</legend>
       <label for="lastProcedureDate">Last Procedure Date (mm/dd/yyyy):</label>
       <input type="date" id="lastProcedureDate" name="lastProcedureDate" required><br><br>
-    
+
       <label for="lastTestosteroneDose">Last Testosterone Dose:</label>
       <input type="number" id="lastTestosteroneDose" name="lastTestosteroneDose" step="0.01" required><br><br>
     </fieldset>
@@ -85,7 +98,7 @@
     <div class="grid-item">
       <label for="moodiness">Moodiness</label>
       <input type="checkbox" id="moodiness" name="moodiness" >
-    </div>  
+    </div>
     <div class="grid-item">
       <label for="lowLibido">Low Libido</label>
       <input type="checkbox" id="lowLibido" name="lowLibido" >
@@ -97,7 +110,7 @@
     <div class="grid-item">
       <label for="jointPain">Joint Pain</label>
       <input type="checkbox" id="jointPain" name="jointPain" >
-    </div>  
+    </div>
     <div class="grid-item">
       <label for="depressionAnxiety">Depression/Anxiety</label>
       <input type="checkbox" id="depressionAnxiety" name="depressionAnxiety" >
@@ -109,7 +122,7 @@
     <div class="grid-item">
       <label for="other">Other</label>
       <input type="checkbox" id="other" name="other" >
-    </div>  
+    </div>
   </div>
 
    <!-- <div class="all">
@@ -132,7 +145,7 @@
     <label for="other">Other</label>
     <input type="checkbox" id="other" name="other" ><br><br>
    </div> -->
-   
+
     </fieldset>
     <br><br>
 
@@ -141,7 +154,7 @@
       <legend>Laboratory Data</legend>
       <label for="fsh">FSH:</label>
       <input type="number" id="fsh" name="fsh" step="0.01"><br><br>
-    
+
       <label for="totalTestosterone">Total Testosterone:</label>
       <input type="number" id="totalTestosterone" name="totalTestosterone" step="0.01"><br><br>
 
