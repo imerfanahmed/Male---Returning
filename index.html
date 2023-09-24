@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Male - Returning - Dosage Calculator</title>
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <script src="script.js"></script>
+</head>
+<body>
+  
+  <!-- The Modal -->
+  <div id="myModal" class="modal">
+    <!-- Modal content -->
+    <div class="modal-content">
+      <span class="close">×</span>
+
+      <div id="testosteroneDoseBlock" style="background-color: #fff;">
+        <h5>New Testosterone Dose: <span id="newTestosteroneDose"></span></h5>
+        <h6>Last Testosterone Dose: <span id="lastTestosteroneDoseLabel"></span></h6>
+      </div>
+      
+      <div class="appendmsg" id="appendcontent"></div>
+      <div id="dialogueContainer"></div>
+      
+    </div>
+  </div>
+
+  
+  
+
+ 
+  <form id="form">
+    <fieldset>
+      <legend>Patient Information</legend>
+      <label for="patientID">Patient ID:</label>
+      <input type="text" id="patientID" name="patientID" required><br><br>
+    
+      <label for="patientAge">Patient Age:</label>
+      <input type="number" id="patientAge" name="patientAge"><br><br>
+    
+      <label for="patientWeight">Patient Weight (lbs):</label>
+      <input type="number" id="patientWeight" name="patientWeight"><br><br>
+
+    </fieldset>
+    <br><br>
+    <fieldset>
+      <legend>Last Procedure Information</legend>
+      <label for="lastProcedureDate">Last Procedure Date (mm/dd/yyyy):</label>
+      <input type="date" id="lastProcedureDate" name="lastProcedureDate" required><br><br>
+    
+      <label for="lastTestosteroneDose">Last Testosterone Dose:</label>
+      <input type="number" id="lastTestosteroneDose" name="lastTestosteroneDose" step="0.01" required><br><br>
+    </fieldset>
+    <br><br>
+    <fieldset>
+      <legend>Medical History</legend>
+      <label for="updatePSA">PSA Up-to-Date?</label>
+      <select id="updatePSA" name="updatePSA" required>
+        <option value="">Select</option>
+        <option value="No">No</option>
+        <option value="Yes">Yes</option>
+      </select><br><br>
+    </fieldset>
+    <br><br>
+
+    <fieldset>
+
+      <legend>Symptoms Experienced</legend>
+      <label for="symptomRelief">Did patient experience symptom relief since last procedure?</label>
+      <select id="symptomRelief" name="symptomRelief" required>
+        <option value="">Select</option>
+        <option value="No">No</option>
+        <option value="Yes">Yes</option>
+   </select><br><br>
+
+
+   <div class="grid-container">
+    <div class="grid-item">
+      <label for="sleepIssues">Sleep Issues</label>
+      <input type="checkbox" id="sleepIssues" name="sleepIssues" >
+    </div>
+    <div class="grid-item">
+      <label for="nightSweats">Night Sweats</label>
+      <input type="checkbox" id="nightSweats" name="nightSweats" >
+    </div>
+    <div class="grid-item">
+      <label for="moodiness">Moodiness</label>
+      <input type="checkbox" id="moodiness" name="moodiness" >
+    </div>  
+    <div class="grid-item">
+      <label for="lowLibido">Low Libido</label>
+      <input type="checkbox" id="lowLibido" name="lowLibido" >
+    </div>
+    <div class="grid-item">
+      <label for="brainFog">Brain Fog</label>
+      <input type="checkbox" id="brainFog" name="brainFog" >
+    </div>
+    <div class="grid-item">
+      <label for="jointPain">Joint Pain</label>
+      <input type="checkbox" id="jointPain" name="jointPain" >
+    </div>  
+    <div class="grid-item">
+      <label for="depressionAnxiety">Depression/Anxiety</label>
+      <input type="checkbox" id="depressionAnxiety" name="depressionAnxiety" >
+    </div>
+    <div class="grid-item">
+      <label for="fatigue">Fatigue</label>
+      <input type="checkbox" id="fatigue" name="fatigue" >
+    </div>
+    <div class="grid-item">
+      <label for="other">Other</label>
+      <input type="checkbox" id="other" name="other" >
+    </div>  
+  </div>
+
+   <!-- <div class="all">
+    <label for="sleepIssues">Sleep Issues</label>
+    <input type="checkbox" id="sleepIssues" name="sleepIssues" ><br><br>
+    <label for="nightSweats">Night Sweats</label>
+    <input type="checkbox" id="nightSweats" name="nightSweats" ><br><br>
+    <label for="moodiness">Moodiness</label>
+    <input type="checkbox" id="moodiness" name="moodiness" ><br><br>
+    <label for="lowLibido">Low Libido</label>
+    <input type="checkbox" id="lowLibido" name="lowLibido" ><br><br>
+    <label for="brainFog">Brain Fog</label>
+    <input type="checkbox" id="brainFog" name="brainFog" ><br><br>
+    <label for="jointPain">Joint Pain</label>
+    <input type="checkbox" id="jointPain" name="jointPain" ><br><br>
+    <label for="depressionAnxiety">Depression/Anxiety</label>
+    <input type="checkbox" id="depressionAnxiety" name="depressionAnxiety" ><br><br>
+    <label for="fatigue">Fatigue</label>
+    <input type="checkbox" id="fatigue" name="fatigue" ><br><br>
+    <label for="other">Other</label>
+    <input type="checkbox" id="other" name="other" ><br><br>
+   </div> -->
+   
+    </fieldset>
+    <br><br>
+
+
+    <fieldset>
+      <legend>Laboratory Data</legend>
+      <label for="fsh">FSH:</label>
+      <input type="number" id="fsh" name="fsh" step="0.01"><br><br>
+    
+      <label for="totalTestosterone">Total Testosterone:</label>
+      <input type="number" id="totalTestosterone" name="totalTestosterone" step="0.01"><br><br>
+
+      <label for="freeT3">Free T3:</label>
+      <input type="number" id="freeT3" name="freeT3" step="0.01"><br><br>
+    </fieldset>
+
+    <input type="submit" value="Calculate" id="calculate">
+  </form>
+</body>
+</html>
